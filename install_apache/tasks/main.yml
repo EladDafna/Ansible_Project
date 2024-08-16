@@ -1,0 +1,23 @@
+---
+# tasks file for install_apache
+- name: Install Apache
+  apt:   name=apache2   state=latest
+  when: ansible_os_family == "Debian"
+  
+
+- name: Start Apache service
+  service:   name=apache2   state=started   enabled=yes
+  when: ansible_os_family == "Debian"
+  
+
+- name: Install httpd
+  yum: name=httpd state=latest
+  when: ansible_os_family == "RedHat"
+  
+
+- name: Start httpd service
+  service: name=httpd  state=started enabled=yes
+  when: ansible_os_family == "RedHat"
+
+  notify: Restart Apache service
+  notify: Restart httpd service

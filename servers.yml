@@ -1,0 +1,8 @@
+---
+- name: Chack Server System
+  hosts: all
+  become: yes
+  
+  roles:
+    - { role: servers }
+

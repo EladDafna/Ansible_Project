@@ -1,0 +1,8 @@
+---
+- name: Install Apache server web
+  hosts: all
+  become: yes
+  any_errors_fatal: true
+  
+  roles:
+    - { role: install_apache }

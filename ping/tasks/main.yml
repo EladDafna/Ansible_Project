@@ -1,0 +1,9 @@
+---
+# tasks file for ping
+- name: Test Ping
+  ping:
+  register: ping_result
+  
+- name: Display ping result
+  debug:
+    var: ping_result

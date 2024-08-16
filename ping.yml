@@ -1,0 +1,8 @@
+---
+- name: Send ping
+  hosts: all
+  become: yes
+
+  roles:
+    - { role: ping }
+

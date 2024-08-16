@@ -1,0 +1,4 @@
+---
+# vars file for servers
+total_Debian: "{{ ansible_play_hosts_all | map('extract', hostvars, 'ansible_os_family') | select('equalto', 'Debian') | list | length }}"
+total_RedHat: "{{ ansible_play_hosts_all | map('extract', hostvars, 'ansible_os_family') | select('equalto', 'RedHat') | list | length }}"

@@ -1,0 +1,26 @@
+---
+# tasks file for servers_new
+
+    - name: Chacking Server System Name
+      shell: echo "{{ ansible_os_family }} server" >> servers.log
+      delegate_to: 127.0.0.1
+
+    - name: Search for Debian in servers.log
+      shell: cat servers.log | grep -o 'Debian' | wc -l
+      delegate_to: 127.0.0.1
+      register: Debian_count
+
+    - name: Search for RedHat in servers.log
+      shell: cat servers.log | grep -o 'RedHat' | wc -l
+      delegate_to: 127.0.0.1
+      register: RedHat_count
+
+    - name: Display Debian count
+      debug:
+        var: Debian_count.stdout
+      run_once: true
+
+    - name: Display RedHat count
+      debug:
+        var: RedHat_count.stdout
+      run_once: true

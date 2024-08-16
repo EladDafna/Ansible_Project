@@ -1,0 +1,24 @@
+---
+# tasks file for installs
+- name: install python 3.10
+  apt: name=python{{  python_version  }}  state=present
+  ignore_errors: yes 
+  
+- name: install net-tools
+  apt: name=net-tools{{  net_tools_var  }} state=latest
+  ignore_errors: yes 
+  
+- name: install tree
+  apt: name=tree{{  tree_var  }}  state=present
+  ignore_errors: yes 
+  
+- name: install htop
+  apt: name=htop{{  htop_var  }}  state=present
+  ignore_errors: yes 
+
+
+
+
+
+
+

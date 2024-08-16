@@ -1,0 +1,8 @@
+---
+- name: install_Python_Net_tools_Tree_Htop
+  hosts: all
+  become: yes
+
+
+  roles:
+    - { role: installs }

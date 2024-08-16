@@ -1,0 +1,6 @@
+---
+# vars file for installs
+python_version: "3.10"
+net_tools_var:
+tree_var:
+htop_var:

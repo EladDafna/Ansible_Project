@@ -1,0 +1,14 @@
+[ireland]
+elad ansible_host=10.0.0.12 ansible_user=elad 
+
+[frank]
+elad3 ansible_host=10.0.0.14 ansible_user=elad3
+
+[All_Star:children]
+ireland
+frank
+
+[All_Star:vars]
+ansible_ssh_private_key_file = ~/ansible_new/id_rsa
+ 
+
